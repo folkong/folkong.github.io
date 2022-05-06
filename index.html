@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 128px;
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+
+<p id="countdown"></p>
+
+<script>
+const surpriseDate = new Date("May 7, 2022 19:00:00").getTime();
+ setInterval(function() {
+  const now = new Date().getTime();
+  const diff = surpriseDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "OMG, IT'S ABOUT TO HAPPEN!!!";
+  }
+}, 1e3);
+</script>
+
+</body>
+</html>
